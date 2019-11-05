@@ -1,0 +1,806 @@
+.intro {
+    padding: 200px 0;
+    text-align: center;
+    background: $mauve;
+    .intro-wrapper {
+        width: 70%;
+        max-width: 1060px;
+        margin: 0 auto;
+        h4 {
+            @include heading-4;
+            text-transform: uppercase;
+        }
+        p {
+            @include p;
+        }
+        button {
+            @include button($plum);
+        }
+    }
+}
+
+.home-blog-grid {
+    display: grid; 
+    height: 116.5vh;
+    grid-template-columns: 35px 10fr 35px 3fr 35px 10fr 35px;grid-template-rows: 35px 7fr 35px 2fr 1.5fr 7fr 35px 35px; 
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    .upper-background {
+        grid-area: 1 / 1 / 2 / 8;
+        background-color: $mauve;
+    } 
+    .lower-background { 
+        grid-area: 7 / 1 / 9 / 8; 
+        background: $mauve;
+    }
+    .orange-home-frame-1 {
+        grid-area: 2 / 2 / 4 / 4;
+        background: $orange;
+    }
+    .home-blog-img-1 { 
+        grid-area: 1 / 1 / 3 / 3; 
+        z-index: 1;
+        background-image: url("../assets/left-image.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+    .home-blog-text-1 { 
+        grid-area: 2 / 5 / 4 / 7; 
+        display: flex;
+        align-items: center;
+    }
+    .home-blog-text-2 { 
+        grid-area: 5 / 2 / 7 / 4; 
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        text-align: right;
+    }
+    .orange-home-frame-2 { 
+        grid-area: 6 / 5 / 9 / 7; 
+        background: $orange;
+    }
+    .home-blog-img-2 { 
+        grid-area: 5 / 6 / 8 / 8; 
+        z-index: 1;
+        background-image: url("../assets/right-image.jpg");
+        background-position: center;
+        background-size: cover;
+    } 
+} 
+
+.home-blog-grid .text {
+    width: 85%;
+    h6 {
+        @include heading-6;
+        text-transform: uppercase;
+    }
+    p {
+        @include p;
+    }
+    button {
+        @include button($brown);
+    }
+}
+
+
+.info {
+    background: $mauve;
+    padding: 50px 0 75px 0;
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 25px;
+        grid-row-gap: 25px;
+        li {
+            .icon {
+                width: 3.5rem;
+                float: left;
+            }
+            .info-text {
+                float: right;
+                width: calc(100% - 4.5rem);
+                h3 {
+                    @include heading-3;
+                    text-transform: uppercase;
+                }
+                p {
+                    @include p;
+                }
+            }
+        }
+    } 
+}
+
+.icon i {
+    color: white;
+    font-size: 2rem;
+    background: $plum;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 3.5rem;
+    vertical-align: middle;
+}
+
+.middle-banner img{
+        width: 100%;
+}
+
+.month {
+    .popular-month {
+        padding: 100px 0 60px 0;
+        .month-img {
+            width: calc(100% / 3);
+            float: left;
+        }
+        .month-text {
+            width: calc(200% / 3);
+            float: right;
+            padding-top: 10px;
+            h5 {
+                @include heading-5;
+                text-transform: uppercase;
+            }
+            p {
+                @include p;
+            }
+            button {
+                @include button ($brown);
+            }
+        }
+    }
+}
+
+.month-img {
+    .month-img-grid {
+        width: 80%;
+        display: grid;
+        grid-template-columns: 30px 1fr 30px;
+        grid-template-rows: 30px 1fr 30px;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        .month-grid-img {
+            grid-area: 1 / 1 / 3 / 3;
+            z-index: 1;
+            img {
+                width: 100%;
+            }
+        }
+        .month-grid-frame{
+            grid-area: 2 / 2 / 4 / 4;
+            background: $orange;
+        }
+    }
+}
+
+.gallery {
+    background: $mauve;
+    padding: 12vh 0;
+    .shoe-gallery {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        li { 
+            width: 31.5%;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+/* responsive section (home */
+@media (max-width: 1060px) {
+    .home-blog-grid .text {
+        width: 100%;
+    }
+}
+
+@media (max-width: 850px) {
+    .intro {
+    padding: 25vh 0;
+        .intro-wrapper {
+            width: 90%;
+            h2 {
+                @include heading-2;
+                font-size: 3rem;
+                line-height: 2.8rem;
+            }
+        }
+    }
+
+    .home-blog-grid {
+        display: grid; 
+        height: 200vh;
+        grid-template-columns: repeat(2, 25px) 1fr repeat(2, 25px);
+        grid-template-rows: 25px 1fr 25px 1fr repeat(3, 25px) 1fr 25px 1fr 25px; 
+        .upper-background {
+            grid-area: 1 / 1 / 2 / 6; 
+        } 
+        .lower-background { 
+            grid-area: 11 / 1 / 12 / 6; 
+        }
+        .orange-home-frame-1 {
+            grid-area: 2 / 2 / 6 / 6; 
+        }
+        .home-blog-img-1 { 
+            grid-area: 1 / 1 / 3 / 5; 
+        }
+        .home-blog-text-1 { 
+            grid-area: 4 / 3 / 5 / 6; 
+            z-index: 1;
+            background: white;
+        }
+        .home-blog-text-2 { 
+            grid-area: 10 / 1 / 11 / 4;
+            z-index: 1;
+            background: white;
+        }
+        .orange-home-frame-2 { 
+            grid-area: 8 / 1 / 12 / 5;
+        }
+        .home-blog-img-2 { 
+            grid-area: 7 / 2 / 9 / 6;
+        } 
+    } 
+
+    .home-blog-grid .text {
+        padding: 25px;
+    }
+
+    .info {
+        padding-bottom: 50px;
+        .info-grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, 1fr);
+            grid-row-gap: 35px;
+            padding: 0 30px;
+        } 
+    }
+
+    .month {
+        .popular-month {
+            padding: 25px 25px 50px 25px;
+            .month-img {
+                width: 100%;
+            }
+            .month-text {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    .month-img {
+        .month-img-grid {
+            width: 80%;
+            margin: 15px auto;
+            display: grid;
+            grid-template-columns: 30px 1fr 30px;
+            grid-template-rows: 30px 1fr 30px;
+            .month-grid-img {
+                grid-area: 1 / 1 / 3 / 3;
+                z-index: 1;
+            }
+            .month-grid-frame{
+                grid-area: 2 / 2 / 4 / 4;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .intro {
+    padding: 15vh 0;
+    }
+
+    .gallery {
+        padding: 2rem 5rem;
+        .shoe-gallery {
+            flex-direction: column;
+            li { 
+                width: 100%;
+                padding: 25px;
+                margin: 25px auto;
+                background: #bd8aa2;
+            }
+        }
+    }
+}
+
+
+
+// blog page
+
+@mixin info-text {
+    font-family: lato;
+    font-weight: 600;
+    padding: 0;
+}
+
+.blog-main {
+    background: $mauve;
+    .blog-post {
+        width: 62%;
+        float: right;
+        position: relative;
+        right: 0;
+        top: -320px;
+        margin-bottom: -320px;
+        .blog-post-grid {
+            display: grid;
+            grid-template-columns: 35px 1fr 35px;
+            grid-template-rows: auto 50px 1fr 35px auto;
+            .title-blog { 
+                grid-area: 1 / 2 / 2 / 4; 
+                h2 {
+                    @include heading-2;
+                    text-transform: uppercase;
+                }
+            }
+            .blog-post-back { 
+                background-color: $orange;
+                grid-area: 3 / 1 / 5 / 3; 
+            }
+            .blog-post-pic { 
+                grid-area: 2 / 2 / 4 / 4; 
+            }
+            .blog-text-back {
+                grid-area: 3 / 1 / 6 / 6;
+                background: white;
+            }
+            .blog-post-text { 
+                grid-area: 5 / 2 / 6 / 3; 
+                padding: 25px 0;
+                width: 90%;
+                max-width: 1200px;
+                h5 {
+                @include heading-5;
+                text-transform: uppercase;
+                }
+                .post-info {
+                    @include info-text;
+                }
+                p {
+                    @include p;
+                }
+            }
+        }
+    }
+}
+
+.comments {
+    width: 62%;
+    float: right;
+    padding: 35px 15px;
+    h5 {
+        text-transform: uppercase;
+        @include heading-5;
+        margin-bottom: 25px;
+    }
+    .comment-container {
+        width: 88%;
+        display: flex;
+        margin-bottom: 70px;
+        .portrait {
+            flex: 0 0 20%;
+            padding: 0 4%;
+            max-width: 300px;
+            min-width: 150px;
+        }
+        .comment-text {
+            .info {
+                @include info-text;
+            }
+            p {
+                @include p;
+                margin: 0.5rem 0;
+            }
+        }
+    }
+}
+
+.comment-input {
+    width: 88%;
+    margin-bottom: 30px;
+    fieldset {
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 30px 1fr;
+        grid-template-rows: repeat(3, auto);
+        border: none;
+        .input-name {
+            grid-area: 1 / 1 / 2 / 2; 
+            width: 100%;
+            input {
+                @include input-container;
+                background: $mauve;
+            }
+        }
+        .input-email {
+            grid-area: 1 / 3 / 2 / 4;
+            width: 100%;
+            input {
+                @include input-container;
+                background: $mauve;
+            }
+        }
+        .text-area {
+            margin: 30px 0;
+            grid-area: 2 / 1 / 3 / 4; 
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            float: left;
+            width: 100%;
+            height: auto;
+            .comment-box {
+                float: left;
+                width: 100%;
+                min-height: 200px;
+                outline: none;
+                resize: none;
+                border: 2px solid $orange;
+                background: $mauve;
+                padding: 1rem;
+            }
+        }
+        button {
+            grid-area: 3 / 1 / 4 / 4; 
+            @include button($plum);
+            width: 100%;
+        }
+    }
+}
+
+aside {
+    width: 34%;
+    float: left;
+    margin-top: 100px;
+    .weather {
+        display: grid;
+        grid-template-columns: 1fr 2.5fr 20px;
+        grid-template-rows: 18px auto auto;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        .aside-back {
+            background: white;
+            grid-area: 2 / 2 / 4 / 4;
+        }
+        img {
+            grid-area: 1 / 1 / 3 / 3;
+        }
+        .aside-text {
+            grid-area: 3 / 2 / 4 / 4;
+            padding: 20px;
+            h6 {
+                @include heading-7;
+                text-transform: uppercase;
+                color: $plum;
+                margin-top: 20px;
+            }
+            p , li {
+                @include p;
+            }
+        }
+    }
+}
+
+/* responsive section (blog) */
+
+@media (max-width: 1060px) {
+    .blog-main {
+        display: flex;
+        flex-direction: column;
+        aside {
+            order:3;
+            width: 100%;
+            margin: 0 0 50px 0;
+            margin-bottom: 0px;
+            .weather {
+                grid-template-columns: 20px 1fr 3fr;
+                grid-template-rows: 18px auto auto;
+                .aside-back {
+                    background: white;
+                    grid-area: 2 / 2 / 4 / 4;
+                }
+                img {
+                    grid-area: 1 / 1 / 2 / 3;
+                }
+                .aside-text {
+                    display: flex;
+                    grid-area: 3 / 3 / 4 / 4;
+                    padding: 20px;
+                    .any-weather , .recent-posts{
+                        width: 50%;
+                    }
+                }
+            }
+        }
+
+        .blog-post {
+            order:1;
+            width: 100%;
+            top: -250px;
+            margin-bottom: -250px;
+            .blog-post-grid {
+                .blog-post-text {
+                    width: 100%;
+                }
+            }
+        }
+
+        .comments {
+            order:2;
+            width: 100%;
+            padding: 35px;
+            .comment-container {
+                width: 100%;
+            }
+            .comment-input {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+
+    .blog-main{
+        aside {
+            .weather {
+                display: flex;
+                flex-direction: column;
+                background: white;
+                img {
+                    padding: 50px;
+                }
+                .aside-text {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0 50px 50px 50px;
+                    text-align: center;
+                    margin-bottom: 0;
+                    .any-weather , .recent-posts{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .comments {
+            .comment-container {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                .portrait {
+                    padding: 0;
+                    margin-bottom: 20px;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .comment-text {
+                    .info {
+                        @include info-text;
+                    }
+                    p {
+                        @include p;
+                        margin: 0.5rem 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// contact page
+
+.contact-main {
+    background: $mauve;
+    .contact-info {
+        width: 32%;
+        float: left;
+        display: flex;
+        justify-content: end;
+        .contact-container {
+            width: 68.75%;
+            margin-top: 103px;
+            .contact-media {
+                margin: 1.5rem 0;
+                i {
+                    color: $plum;
+                    font-size: 1.5rem;
+                    margin: 0 0.5rem;
+                }
+            }
+            .contact-email{
+                @include heading-7;
+                text-transform: uppercase;
+                color: $plum;
+            }
+            .contact-text{
+                @include p;
+            }
+        }
+    }
+    .get-in-touch {
+        position: relative;
+        float: right;
+        width: 68%;
+        top: -320px;
+        margin-bottom: -180px;
+        .touch-grid {
+            width: 92%;
+            display: grid;
+            grid-template-columns: 32px 1fr 50px;
+            grid-template-rows: auto 50px auto 32px;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px; 
+            .title-touch {
+                grid-area: 1 / 2 / 2 / 3;
+                padding-bottom: 10px;
+                h2 {
+                    @include heading-2;
+                    text-transform: uppercase;
+                }
+            }
+            .touch-frame {
+                grid-area: 3 / 1 / 5 / 3;
+                background: $orange;
+            }
+            .touch-form {
+                background: white;
+                grid-area: 2 / 2 / 4 / 4; ; 
+                fieldset {
+                    padding: 70px 50px 50px 50px;
+                    display: grid;
+                    grid-template-columns: 1fr 30px 1fr;
+                    grid-template-rows: repeat(3, auto);
+                    border: none;
+                    .input-name {
+                        grid-area: 1 / 1 / 2 / 2; 
+                        width: 100%;
+                        input {
+                            @include input-container;
+                        }
+                    }
+                    .input-email {
+                        grid-area: 1 / 3 / 2 / 4;
+                        width: 100%;
+                        input {
+                            @include input-container;
+                        }
+                    }
+                    .text-area {
+                        margin: 40px 0;
+                        grid-area: 2 / 1 / 3 / 4; 
+                        -webkit-box-sizing: border-box;
+                        -moz-box-sizing: border-box;
+                        box-sizing: border-box;
+                        float: left;
+                        width: 100%;
+                        height: auto;
+                        .comment-box {
+                            float: left;
+                            width: 100%;
+                            min-height: 230px;
+                            outline: none;
+                            resize: none;
+                            border: 2px solid $orange;
+                            background: white;
+                            padding: 1rem;
+                        }
+                    }
+                    button {
+                        grid-area: 3 / 1 / 4 / 4; 
+                        @include button($brown);
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* responsive section (contact) */
+@media (max-width: 1060px) {
+    .contact-main {
+        display: flex;
+        flex-direction: column;
+        .contact-info {
+            order: 2;
+            width: 90%;
+            float: none;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            .contact-container {
+                width: 80%;
+                margin: 40px 0;
+                text-align: center;
+                .contact-media {
+                    margin: 2rem 0;
+                    i {
+                        font-size: 2.5rem;
+                        margin: 0 1rem;
+                    }
+                }
+                .contact-email{
+                    @include heading-7;
+                    text-transform: uppercase;
+                    color: $plum;
+                }
+                .contact-text{
+                    @include p;
+                }
+            }
+        }
+        .get-in-touch {
+            order: 1;
+            position: relative;
+            float: none;
+            width: 100%;
+            top: -160px;
+            margin-bottom: -160px;
+            .touch-grid {
+                width: 100%;
+                display: grid;
+                .title-touch {
+                    grid-area: 1 / 1 / 2 / 3;
+                    h2 {
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 460px) {
+    .contact-main {
+        .contact-info {
+            .contact-container {
+                width: 100%;
+                .contact-media {
+                    i {
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+        .get-in-touch {
+            top: -250px;
+            margin-bottom: -250px;
+            .touch-grid {
+                .touch-form {
+                    fieldset {
+                        padding: 70px 50px 50px 50px;
+                        grid-template-columns: 1fr 30px 1fr;
+                        grid-template-rows: repeat(4, auto);
+                        .input-name {
+                            grid-area: 1 / 1 / 2 / 4; 
+                            }
+                        .input-email {
+                            grid-area: 2 / 1 / 3 / 4;
+                            margin: 20px 0;
+                            }
+                        .text-area {
+                            margin: 40px 0;
+                            grid-area: 3 / 1 / 4 / 4; 
+                        }
+                        button {
+                            grid-area: 4 / 1 / 5 / 5; 
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}

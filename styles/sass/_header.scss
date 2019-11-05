@@ -1,0 +1,130 @@
+header {
+    background-image: url("../assets/header-image.jpg");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+    .header-text {
+        height: 90vh;
+        position: relative;
+        padding-top: 30px;
+        .logo {
+        @include logo;
+        float: left;
+        }
+        .find {
+        float: left;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+            h1 {
+            color: $plum;
+            @include heading-1;
+            }
+        }
+    }
+}
+
+.header-box {
+    width: 50%;
+    float: right;
+    position: relative;
+    height: 1vh;
+    .header-box-img {
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translateY(-70%);
+        img {
+            width: 100%;
+        }
+    }
+}
+
+/* responsive section */
+
+@media (max-width: 960px) {
+    header{
+        background-position: center;
+        .header-text {
+            .logo {
+            position: absolute;
+            bottom: 2%;
+            }
+            .find {
+                background-color: rgba($plum, .7);
+                top: 8%;
+                transform: none;
+                h1 {
+                    margin: 30px;
+                    color: white;
+                }
+            }
+        }
+        .header-box {
+            width: 60%;
+            .header-box-img {
+                transform: translateY(-60%);
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        .header-text{
+            .find h1 {
+                font-size: 5rem;
+                line-height: 2.8rem;
+                margin: 30px 20px;
+            }
+        }
+        .header-box {
+            width: 80%;
+            .header-box-img {
+                transform: translateY(-80%);
+            }
+        }
+    }
+}
+
+
+// blog page
+
+.blog-header {
+    background-image: url("../assets/blog-header.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 70vh;
+}
+
+@media (max-width: 960px) {
+    .blog-header {
+        background-position: 75% 50%;
+        .header-text {
+            .logo {
+            position: static;
+            }
+        }
+    }
+}
+
+// contact page
+
+.contact-header {
+    background-image: url("../assets/contact-image.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 70vh;
+}
+
+@media (max-width: 960px) {
+    .contact-header {
+        background-position: 10% 50%;
+            .header-text {
+                .logo {
+                position: static;
+                }
+            }
+    }
+}

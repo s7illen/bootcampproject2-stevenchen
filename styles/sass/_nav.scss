@@ -1,0 +1,140 @@
+@mixin nav {
+    font-family: 'lato', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.8125rem;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+nav {
+    @include nav;
+    float: right;
+    width: 40%;
+    .display-navbar {
+        display: flex;
+        justify-content: space-between;
+        a {
+        text-decoration: none;
+        color: $black;
+        padding: 0 10px;
+        }
+        a:hover , .active {
+            background: $plum;
+            color: white;
+        }
+    }
+    .nav-toggle {
+        visibility: hidden;
+    }
+}
+
+/* responsive section */
+
+@media (max-width: 1270px) {
+    .display-navbar {
+        visibility: hidden;
+    }
+
+    nav .nav-toggle {
+        visibility: visible;
+    }
+
+
+    .nav-toggle{
+        position: absolute;
+        right: 0;
+        top: 30px;
+        display: block;
+        z-index: 1;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    .nav-toggle input{
+        display: block;
+        width: 50px;
+        height: 40px;
+        position: absolute;
+        top: -10px;
+        left: -5px;  
+        cursor: pointer;
+        opacity: 0; 
+        z-index: 2; 
+        -webkit-touch-callout: none;
+    }
+
+    .nav-toggle span{
+        display: block;
+        width: 32px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        background: $plum;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;
+    }
+
+    .nav-toggle span:first-child {
+        transform-origin: 0% 0%;
+    }
+
+    .nav-toggle span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+    }
+
+    .nav-toggle input:checked ~ span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: #232323;
+    }
+
+    .nav-toggle input:checked ~ span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    .nav-toggle input:checked ~ span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+
+    .menu {
+        position: absolute;
+        width: 300px;
+        margin: -50px 0 0 -320px;
+        padding: 0 50px;
+        padding-top: 1px;
+        background: rgba($plum, 0.8);
+        list-style-type: none;
+        transform-origin: 0% 0%;
+        transform: translate(180%, 0);
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+
+    .nav-toggle a {
+        text-decoration: none;
+        color: white;
+        transition: $brown 0.3 ease;
+    }
+
+    .nav-toggle a:hover {
+        color: $black;
+    }
+
+    .menu li {
+        padding: 10px 0;
+        font-size: 22px;
+    }
+
+    .menu li:hover {
+        background: $mauve;
+    }
+
+    .nav-toggle input:checked ~ ul {
+        transform: none;
+    }
+}

@@ -1,0 +1,149 @@
+$plum: #4C0341;
+$orange: #FE6F19;
+$black: #0D0D0D;
+$brown: #882C07;
+$mauve: #FAE5FF;
+
+
+@mixin heading-1 {
+    font-family: 'Pompiere', cursive;
+    font-size: 6.875rem;
+    line-height: 4rem;
+    color: $plum;
+    margin: 0;
+}
+
+@mixin heading-2 {
+    font-family: 'Pompiere', cursive;
+    font-size: 5rem;
+    line-height: 5.75rem;
+    color: $plum;
+    margin: 0;
+}
+
+@mixin heading-3 {
+    font-family: 'Pompiere', cursive;
+    font-size: 3.25rem;
+    letter-spacing: 1.6px;
+    color: black;
+    margin: 0;
+}
+
+@mixin heading-4 {
+    font-family: 'Pompiere', cursive;
+    font-size: 3.25rem;
+    letter-spacing: 1.2px;
+    color: $plum;
+    text-align: center;
+    margin: 0;
+}
+
+@mixin heading-5 {
+    font-family: 'Pompiere', cursive;
+    font-size: 3.25rem;
+    letter-spacing: 1.2px;
+    color: $plum;
+    margin: 0;
+}
+
+@mixin heading-6 {
+    font-family: 'Pompiere', cursive;
+    font-size: 2.625rem;
+    letter-spacing: 1.3px;
+    margin: 0;
+}
+
+@mixin heading-7 {
+    font-family: 'Pompiere', cursive;
+    font-size: 1.875rem;
+    letter-spacing: 1.3px;
+    margin: 0;
+}
+
+@mixin p {
+    font-family: 'lato', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8rem;
+    color: $black;
+}
+
+@mixin logo {
+    font-family: 'Pompiere', cursive;
+    font-size: 2.2375rem;
+    letter-spacing: 1.1px;
+    line-height: 2.25rem;
+    word-spacing: 100vw;
+    width: 0;
+}
+
+@mixin footer {
+    font-family: 'lato', sans-serif;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    text-align: center;
+}
+
+@mixin button($color-value) {
+    font-family: 'lato', sans-serif;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    background-color: $color-value;
+    border: none;
+}
+
+@mixin input-container {
+    float: left;
+    width: 100%;
+    outline: none;
+    resize: none;
+    border: none;
+    border-bottom: 2px solid $orange;
+    padding: 1rem;
+}
+
+.wrapper {
+    width: 80%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+::placeholder {
+    color: $black;
+    opacity: 1;
+    font-family: lato;
+}
+
+label {
+    display: none;
+}
+
+
+/* responsive section */
+
+@media (max-width: 960px) {
+    .wrapper {
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        width: 98%;
+    }
+}

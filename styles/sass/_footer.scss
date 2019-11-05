@@ -1,0 +1,8 @@
+footer {
+    background: $brown;
+    p {
+        @include footer;
+        color: white;
+        margin: 0;
+    }
+}
